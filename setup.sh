@@ -10,7 +10,7 @@ init (){
     git submodule foreach git pull origin master
     npm install
     cp CITest/CISCFiles/config-chan1-TLS.json SCFiles/config-chan1-TLS.json
-    jq -s '.[0] * {"gopath": "GOPATH"}' SCFiles/config-chan1-TLS.json > tmp.json
+    jq -s '.[0] * {"test-network": {"gopath": "GOPATH"}}' SCFiles/config-chan1-TLS.json > tmp.json
     mv tmp.json SCFiles/config-chan1-TLS.json
     ## add gopath to the SCFile
     mkdir -p inputFiles/run1
