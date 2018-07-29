@@ -35,7 +35,7 @@ function readAllFiles(dir) {
 			} else if (fileName.indexOf('invoke') >= 0){
 				data.channelOpt.orgName.push(mspIdList[0]);
 				data.txCfgPtr = 'inputFiles/run2/txCfgOpt.json';
-				data.ccDfnPtr = 'inputFiles/run2/ccDfnPtr.json';
+				data.ccDfnPtr = 'inputFiles/run2/ccDfnOpt.json';
 			} else if (fileName.indexOf('ins') >= 0){
 				// Install / Instantiate
 				for (i=0;i<mspIdList.length;i++){
@@ -43,8 +43,8 @@ function readAllFiles(dir) {
 				}
 			} else if (fileName.indexOf('ccDfnOpt.json') >= 0){
 				data.ccOpt.payLoadType = 'Fixed';
-				data.ccOpt.payLoadMin = '10240';
-				data.ccOpt.payLoadMax = '10240';
+				data.ccOpt.payLoadMin = '20480';
+				data.ccOpt.payLoadMax = '20480';
 				data.ccOpt.keyStart = keyStart;
 			} 
 			fs.writeFile(filePath, JSON.stringify(data, null, 2), function (err) {
