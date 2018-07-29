@@ -73,7 +73,7 @@ function execScenario1(){
     echo "sdk=node ${DEST}/marbles-invoke.json" >& ${DEST}/invoke.txt
     echo "sdk=node ${DEST}/marbles-query.json" >& ${DEST}/query.txt
 
-    export CHAINCODE_NAME=marbles
+    export CHAINCODE_NAME=marblescc
     
     exec generateMarbleCfgFiles.js
 }
