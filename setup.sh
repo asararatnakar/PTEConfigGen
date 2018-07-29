@@ -6,6 +6,9 @@ init (){
     git checkout release-1.1
     git pull origin release-1.1
     rm -rf inputFiles node_modules/ package-lock.json tmp.json
+    git submodule update --init --recursive
+    git submodule foreach git pull origin master
+    npm install
     cp CITest/CISCFiles/config-chan1-TLS.json SCFiles/config-chan1-TLS.json
     jq -s '.[0] * {"gopath": "GOPATH"}' SCFiles/config-chan1-TLS.json > tmp.json
     mv tmp.json SCFiles/config-chan1-TLS.json
