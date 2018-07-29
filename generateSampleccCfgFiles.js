@@ -34,6 +34,8 @@ function readAllFiles(dir) {
 				}
 			} else if (fileName.indexOf('invoke') >= 0){
 				data.channelOpt.orgName.push(mspIdList[0]);
+				data.txCfgPtr = 'inputFiles/run2/txCfgOpt.json';
+				data.ccDfnPtr = 'inputFiles/run2/ccDfnPtr.json';
 			} else if (fileName.indexOf('ins') >= 0){
 				// Install / Instantiate
 				for (i=0;i<mspIdList.length;i++){

@@ -57,13 +57,13 @@ function exec(){
         log "\n ========== R E - G E N E R A T E   C F G   F I L E S ==========\n"
         node $NODE_FILE
         ./pte_driver.sh ${DEST}/invoke.txt | tee -a run.log
-        sleep 2
+        sleep 5
     done
     #  5 runs with each run changing the keyStart value
     export DURATION=60;
     log "\n ========== R E S E T   D U R A T I O N    T O  60 secs ==========\n"
     node $NODE_FILE
-    sleep 2
+    sleep 5
     log "\n ========== S E N D   Q U E R I E S ========== \n"
     for ((i=0;i<5;i++))
     do
