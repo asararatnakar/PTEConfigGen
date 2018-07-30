@@ -116,11 +116,12 @@ function execScenario2(){
 
 function end() {
     export PROG="END"
-    log "\nTotal execution time : $(($(date +%s)-starttime)) secs ...\n"
-    log "\n ========== A L L   D O N E ============\n"
 
     cat pteReport.txt | tee -a run.log
     cat pteReport.txt | grep TPS | awk '{print $3}' | tee -a run.log
+
+    log "\nTotal execution time : $(($(date +%s)-starttime)) secs ...\n"
+    log "\n ========== A L L   D O N E ============\n"
 }
 
 init
